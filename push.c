@@ -76,6 +76,7 @@ void push(stack_t **stack, unsigned int line_number)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			free_glob();
+			exit(EXIT_FAILURE);
 		}
 	}
 	n = atoi(glob.arg);

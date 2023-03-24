@@ -43,6 +43,8 @@ int main(int argc,  char **argv)
 	}
 	while ((check = _getline(&glob.buf, &size, fp)) != -1)
 	{
+		if (_strlen(glob.buf) == 1)
+			continue;
 		args[0] = strtok(glob.buf, "\n\t$ ");
 		args[1] = strtok(NULL, "\n\t$ ");
 		glob.arg = args[1];
