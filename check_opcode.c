@@ -26,5 +26,6 @@ void (*opc(char *arg, size_t line))(stack_t **stack, unsigned int line_number)
 			return (inst_arr[i].f);
 	}
 	fprintf(stderr, "L%ld: unknown instruction %s\n", line, arg);
+	free_glob();
 	exit(EXIT_FAILURE);
 }

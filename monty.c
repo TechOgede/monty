@@ -34,16 +34,15 @@ int main(int argc,  char **argv)
 
 	fp = check_file(argc, argv);
 	init_global_vars(fp);
+	args = malloc(sizeof(char *) * 2);
+	if (!args)
+	{
+		fclose(fp);
+		fprintf(stderr, "malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	while ((check = _getline(&glob.buf, &size, fp)) != -1)
 	{
-		args = malloc(sizeof(char *) * 2);
-		if (!args)
-		{
-			free(glob.buf);
-			fprintf(stderr, "malloc failed\n");
-			exit(EXIT_FAILURE);
-		}
-		printf("%d, %s", glob.line_num, glob.buf);
 		args[0] = strtok(glob.buf, "\n\t$ ");
 		args[1] = strtok(NULL, "\n\t$ ");
 		glob.arg = args[1];
