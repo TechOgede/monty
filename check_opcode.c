@@ -19,6 +19,7 @@ void (*opc(char *arg, size_t line))(stack_t **stack, unsigned int line_number)
 				  {"push", push},
 				  {"pall", pall},
 				  {"pint", pint},
+				  {"pop", pop},
 				 };
 	inst_arr_len = sizeof(inst_arr) / sizeof(instruction_t);
 	for (i = 0; i < inst_arr_len; i++)
