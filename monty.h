@@ -71,6 +71,7 @@ void init_global_vars(FILE *fp);
 /* opcode functions */
 void push(stack_t **stack, unsigned int line_number);
 void push_stack(stack_t **stack, int n);
+void push_queue(stack_t **stack, int n);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
@@ -85,7 +86,8 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
-
+void stack_f(stack_t **stack, unsigned int line_number);
+void queue_f(stack_t **stack, unsigned int line_number);
 
 
 
