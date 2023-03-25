@@ -67,6 +67,7 @@ void (*opc(char *arg, size_t line))
 void push(stack_t **stack, unsigned int line_number);
 void push_stack(stack_t **stack, int n);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 void free_glob(void);
 void init_global_vars(FILE *fp);
 
