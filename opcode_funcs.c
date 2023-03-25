@@ -1,5 +1,36 @@
 #include "monty.h"
 
+
+/**
+* rotr - rotates stack to bottom
+* @stack: address of stack_pointer
+* @line_number: current line in file
+*
+* Description: causes the last elem to become
+* the top elem
+*/
+
+void rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr, *prev, *last;
+
+	(void)line_number;
+
+	if ((*stack) == NULL || (*stack)->next == NULL)
+		return;
+	ptr = *stack;
+	while (ptr->next)
+	{
+		prev = ptr;
+		ptr = ptr->next;
+	}
+	last = ptr;
+	prev->next = NULL;
+	last->prev = NULL;
+	last->next = (*stack)->next;
+	*stack = last;
+}
+
 /**
 * rotl - rotates stack
 * @stack: address of stack_pointer
