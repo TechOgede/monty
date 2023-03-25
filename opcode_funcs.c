@@ -1,6 +1,35 @@
 #include "monty.h"
 
 /**
+* pstr - prints the string in the stack
+* @stack: address of stack_pointer
+* @line_number: current line in file
+*
+* Description: prints the int field of
+* each stack_t element in a stack stack as a char.
+* starting from the top
+*/
+
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr;
+	(void)line_number;
+
+	if ((*stack) == NULL)
+	{
+		printf("\n");
+		return;
+	}
+	ptr = *stack;
+	while (ptr)
+	{
+		if (ptr->n <= 0 || ptr->n > 127)
+			return;
+		printf("%c\n", ptr->n);
+		ptr = ptr->next;
+	}
+}
+/**
 * pchar - prints the char at the top of the stack
 * @stack: address of stack_pointer
 * @line_number: current line in file
