@@ -74,10 +74,8 @@ void pstr(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 
 	ptr = *stack;
-	while (ptr)
+	while (ptr && ptr->n > 0 && ptr->n < 128)
 	{
-		if (ptr->n <= 0 || ptr->n > 127)
-			return;
 		printf("%c", ptr->n);
 		ptr = ptr->next;
 	}
