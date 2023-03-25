@@ -16,17 +16,16 @@ void rotl(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 
+	if ((*stack) == NULL || (*stack)->next == NULL)
+		return;
 	first = ptr = *stack;
-	if ((*stack)->next)
-	{
-		while (ptr->next)
-			ptr = ptr->next;
-		ptr->next = first;
-		first->prev = ptr;
-		*stack = first->next;
-		(*stack)->prev = NULL;
-		first->next = NULL;
-	}
+	while (ptr->next)
+		ptr = ptr->next;
+	ptr->next = first;
+	first->prev = ptr;
+	*stack = first->next;
+	(*stack)->prev = NULL;
+	first->next = NULL;
 }
 /**
 * pstr - prints the string in the stack
