@@ -15,20 +15,17 @@ void pstr(stack_t **stack, unsigned int line_number)
 	stack_t *ptr;
 	(void)line_number;
 
-	if ((*stack) == NULL)
-	{
-		printf("\n");
-		return;
-	}
 	ptr = *stack;
 	while (ptr)
 	{
 		if (ptr->n <= 0 || ptr->n > 127)
 			return;
-		printf("%c\n", ptr->n);
+		printf("%c", ptr->n);
 		ptr = ptr->next;
 	}
+	printf("\n");
 }
+
 /**
 * pchar - prints the char at the top of the stack
 * @stack: address of stack_pointer
