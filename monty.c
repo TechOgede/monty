@@ -49,6 +49,8 @@ int main(int argc,  char **argv)
 		glob.args_arr[1] = strtok(NULL, "\n\t$ ");
 		if (glob.args_arr[0])
 		{
+			if (_strcmp(glob.args_arr[0], "#") == 0 || glob.args_arr[0][0] == '#')
+				continue;
 			glob.arg = glob.args_arr[1];
 			op_func = opc(glob.args_arr[0], glob.line_num);
 			op_func(&glob.head, glob.line_num);
