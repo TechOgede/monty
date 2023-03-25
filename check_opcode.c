@@ -27,6 +27,7 @@ void (*opc(char *arg, size_t line))(stack_t **stack, unsigned int line_number)
 				  {"div", divide},
 				  {"mul", mul},
 				  {"mod", mod},
+				  {"pchar", pchar},
 				 };
 	inst_arr_len = sizeof(inst_arr) / sizeof(instruction_t);
 	for (i = 0; i < inst_arr_len; i++)

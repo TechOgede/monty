@@ -61,9 +61,14 @@ typedef struct global_vars
 
 extern global_t glob;
 
+/* Monty functions */
 FILE *check_file(int argc, char **argv);
 void (*opc(char *arg, size_t line))
 (stack_t **stack, unsigned int line_number);
+void free_glob(void);
+void init_global_vars(FILE *fp);
+
+/* opcode functions */
 void push(stack_t **stack, unsigned int line_number);
 void push_stack(stack_t **stack, int n);
 void pall(stack_t **stack, unsigned int line_number);
@@ -76,8 +81,7 @@ void sub(stack_t **stack, unsigned int line_number);
 void divide(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
-void free_glob(void);
-void init_global_vars(FILE *fp);
+void pchar(stack_t **stack, unsigned int line_number);
 
 /* str functions*/
 char *_strtok(char *str, char *delim);
